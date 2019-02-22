@@ -4,7 +4,7 @@ Theme URI: https://tricksmash.com/mudra/
 Author: ItsAnilSingh
 Author URI: https://github.com/ItsAnilSingh
 Description: Mudra is a free responsive, fast loading and SEO friendly WordPress theme for blogs. This theme is ideal for personal, technology, lifestyle, cooking, travel, fashion, photography and any other kind of amazing blog. Rich snippets are also integrated into this theme to help search engines identify all parts of your site and rank its content higher. Mudra incorporates several premium-level customization options. This theme is translation ready, well documented, and easy to configure.
-Version: 1.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mudra
@@ -846,6 +846,12 @@ p > object:only-child {
 	-moz-transition: top 0.2s ease;
 	-o-transition: top 0.2s ease;
 	transition: top 0.2s ease;
+}
+
+.header-search label {
+	display: inline-block;
+	font-weight: 400;
+	margin-bottom: 0;
 }
 
 #header-main .header-search {

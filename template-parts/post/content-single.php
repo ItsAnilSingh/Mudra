@@ -67,7 +67,7 @@
 
 <?php if ( true == get_theme_mod( 'author_box', true ) ) : ?>
 <div class="author-box" itemprop="author" itemscope itemtype="http://schema.org/Person">
-	<h4 class="about-author">About The Author</h4>
+	<h4 class="about-author"><?php _e( 'About The Author', 'mudra' ); ?></h4>
 	<span>
 		<?php
 			if ( function_exists( 'get_avatar' ) ) :
@@ -82,13 +82,13 @@
 		<span class="author-desc" itemprop="description"><?php the_author_meta( 'description' ); ?></span>
 		<div class="post-author-links">
 		<?php if ( get_the_author_meta( 'facebook' ) != '' ) : ?>
-			<a class="facebook" title="Follow on Facebook" href="<?php echo get_the_author_meta( 'facebook' ); ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			<a class="facebook" title="<?php _e( 'Follow on Facebook', 'mudra' ); ?>" href="<?php echo get_the_author_meta( 'facebook' ); ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 		<?php endif; ?>
 		<?php if ( get_the_author_meta( 'twitter' ) != '' ) : ?>
-			<a class="twitter" title="Follow on Twitter" href="<?php echo esc_url( 'https://twitter.com/' ) . get_the_author_meta( 'twitter' ); ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+			<a class="twitter" title="<?php _e( 'Follow on Twitter', 'mudra' ); ?>" href="<?php echo esc_url( 'https://twitter.com/' ) . get_the_author_meta( 'twitter' ); ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 		<?php endif; ?>
 		<?php if ( get_the_author_meta( 'googleplus' ) != '' ) : ?>
-			<a class="googleplus" title="Follow on Google+" href="<?php echo get_the_author_meta( 'googleplus' ); ?>" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+			<a class="googleplus" title="<?php _e( 'Follow on Google+', 'mudra' ); ?>" href="<?php echo get_the_author_meta( 'googleplus' ); ?>" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
 		<?php endif; ?>
 		</div>
 	</div>

@@ -12,7 +12,8 @@ if ( ! function_exists( 'mudra_custom_excerpt_length' ) ) :
  * Filter the excerpt length.
  */
 function mudra_custom_excerpt_length( $length ) {
-	return get_theme_mod( 'excerpt_length', 45 );
+	$custom_length = get_theme_mod( 'excerpt_length', 45 );
+	return is_admin() ? $length : $custom_length;
 }
 add_filter( 'excerpt_length', 'mudra_custom_excerpt_length', 999 );
 endif;
@@ -39,21 +40,21 @@ function mudra_entry_date( $entry_date ) {
 		printf(
 			__( 'Posted on: <time class="published" itemprop="datePublished" datetime="%1$s">%2$s</time>', 'mudra' ),
 			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date( 'D, M j, Y' ) )
+			esc_html( get_the_date() )
 		);
 	elseif ( 'updated_date' === $entry_date ) :
 		printf(
 			__( 'Last updated on: <time class="modified" itemprop="dateModified" datetime="%1$s">%2$s</time>', 'mudra' ),
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date( 'D, M j, Y' ) )
+			esc_html( get_the_modified_date() )
 		);
 	elseif ( 'posted_updated_date' === $entry_date ) :
 		printf(
 			__( 'Posted on: <time class="published" itemprop="datePublished" datetime="%1$s">%2$s</time> <span>&vert;</span> Last updated on: <time class="modified" itemprop="dateModified" datetime="%3$s">%4$s</time>', 'mudra' ),
 			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date( 'D, M j, Y' ) ),
+			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date( 'D, M j, Y' ) )
+			esc_html( get_the_modified_date() )
 		);
 	endif;
 

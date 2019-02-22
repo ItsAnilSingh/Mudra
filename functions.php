@@ -8,7 +8,7 @@
  */
 
 // Set theme version
-define( 'MUDRA_VERSION', '1.0' );
+define( 'MUDRA_VERSION', '1.0.1' );
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -207,6 +207,12 @@ function mudra_scripts () {
 
 	// SlickNav
 	wp_enqueue_script( 'slicknav', get_template_directory_uri() . '/assets/js/jquery.slicknav.min.js', array(), '1.0.10', true );
+
+	// Custom Mudra Scripts
+	wp_enqueue_script( 'mudra-script', get_template_directory_uri() . '/assets/js/mudra.js', array(), MUDRA_VERSION, true );
+	if ( true == get_theme_mod( 'sticky_header_nav', true ) ) :
+		wp_enqueue_script( 'mudra-sticky', get_template_directory_uri() . '/assets/js/sticky.js', array(), MUDRA_VERSION, true );
+	endif;
 
 	// Modernizr
 	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/js/modernizr.min.js', array(), '2.6.2', true );

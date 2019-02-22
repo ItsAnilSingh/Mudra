@@ -12,7 +12,7 @@
 	$theme          = __( 'Mudra', 'mudra' );
 	$theme_uri      = 'https://tricksmash.com/mudra/';
 	$author         = 'ItsAnilSingh';
-	$copyright_text = get_theme_mod( 'copyright_text', 'All Rights Reserved' );
+	$copyright_text = get_theme_mod( 'copyright_text', __( 'All Rights Reserved', 'mudra' ) );
 
 	if ( '' == $copyright_text )
 		$copyright_text = __( 'All Rights Reserved', 'mudra' );
@@ -22,7 +22,7 @@
 		date_i18n( date( 'Y' ) ),
 		esc_url( home_url() ),
 		get_bloginfo( 'name' ),
-		$copyright_text
+		esc_attr( $copyright_text )
 	);
 
 	if ( true == get_theme_mod( 'support_theme', true ) ) :
@@ -31,7 +31,7 @@
 			__( 'Theme', 'mudra' ),
 			esc_url( $theme_uri ),
 			$theme,
-			$author
+			esc_attr( $author )
 		);
 	endif;
 ?>

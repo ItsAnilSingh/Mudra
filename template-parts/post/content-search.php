@@ -40,8 +40,8 @@
 	</div><!-- .entry-summary -->
 
 	<div class="read-more">
-		<a href="<?php the_permalink(); ?>" title="<?php echo get_theme_mod( 'read_more', 'Read More' ); ?>">
-			<?php echo get_theme_mod( 'read_more', 'Read More' ); ?>
+		<a href="<?php the_permalink(); ?>">
+			<?php echo esc_attr( get_theme_mod( 'read_more' ) ); ?>
 		</a>
 	</div>
 

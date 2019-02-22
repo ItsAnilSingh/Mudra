@@ -71,11 +71,7 @@
 
 			<span class="mobile-toggle"><i class="fa fa-search" aria-hidden="true"></i></span>
 			<div class="header-search">
-				<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<span class="screen-reader-text">Search for:</span>
-					<input type="search" class="search-field" placeholder="<?php _e( 'Search for&hellip;', 'mudra' ); ?>" title="<?php _e( 'Enter keywords to search.', 'mudra' ); ?>" value="" name="s" autocomplete="off" />
-					<input type="submit" class="search-submit" value="Search" />
-				</form>
+				<?php get_search_form(); ?>
 			</div><!-- .header-search -->
 
 			<?php endif; ?>
@@ -114,12 +110,7 @@
 
 			<span class="search-toggle"><i class="fa fa-search" aria-hidden="true"></i></span>
 			<div class="header-search">
-				<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
-					<span class="screen-reader-text">Search for:</span>
-					<input type="search" class="search-field" itemprop="query-input" placeholder="<?php _e( 'Search for&hellip;', 'mudra' ); ?>" title="<?php _e( 'Enter keywords to search.', 'mudra' ); ?>" value="" name="s" autocomplete="off" />
-					<input type="submit" class="search-submit" value="Search" />
-					<meta itemprop="target" content="<?php echo esc_url( home_url( '/' ) ) . "?s={s}"; ?>">
-				</form>
+				<?php get_search_form(); ?>
 			</div><!-- .header-search -->
 
 			<?php endif; ?>
