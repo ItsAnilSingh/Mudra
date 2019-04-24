@@ -12,7 +12,7 @@
 			<?php endif;
 				$description = get_bloginfo( 'description', 'display' );
 				if ( $description || is_customize_preview() ) :
-			?>	<p class="site-description" itemprop="description"><?php echo $description; ?></p><!-- .site-description -->
+			?>	<p class="site-description" itemprop="description"><?php echo esc_html( $description ); ?></p><!-- .site-description -->
 			<?php endif; ?>
 
 			</div><!-- .site-branding -->

@@ -11,7 +11,7 @@
 				printf( ' &vert; ' );
 			endif;
 			printf( '<span class="entry-author vcard">' );
-			_e( 'By: ', 'mudra' );
+			esc_html_e( 'By: ', 'mudra' );
 			printf( '<span itemprop="author" itemscope itemtype="http://schema.org/Person">' );
 			mudra_author_posts_link();
 			printf( '</span></span>' );
@@ -36,7 +36,7 @@
 				printf( ' &vert; ' );
 			endif;
 			printf( '<span class="entry-author vcard">' );
-			_e( 'By: ', 'mudra' );
+			esc_html_e( 'By: ', 'mudra' );
 			printf( '<span itemprop="author" itemscope itemtype="http://schema.org/Person">' );
 			mudra_author_posts_link();
 			printf( '</span></span>' );

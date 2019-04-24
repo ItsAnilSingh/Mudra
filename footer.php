@@ -25,20 +25,15 @@
 				<nav id="footer-nav" class="footer-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="<?php esc_attr_e( 'Footer Menu', 'mudra' ); ?>">
 
 					<?php
-						if ( has_nav_menu( 'footer' ) ) :
-							wp_nav_menu( array(
-								'theme_location' => 'footer',
-								'menu_id'        => 'footer-menu',
-								'menu_class'     => 'sf-menu',
-								'link_before'    => '<span itemprop="name">',
-								'link_after'     => '</span>'
-							) );
-						elseif ( current_user_can( 'edit_theme_options' ) ) :
+						wp_nav_menu( array(
+							'theme_location' => 'footer',
+							'menu_id'        => 'footer-menu',
+							'menu_class'     => 'sf-menu',
+							'fallback_cb'    => 'mudra_footer_fallback_menu',
+							'link_before'    => '<span itemprop="name">',
+							'link_after'     => '</span>'
+						) );
 					?>
-					<ul id="footer-menu" class="sf-menu">
-						<li><a href="<?php echo esc_url( home_url() ); ?>/wp-admin/nav-menus.php"><?php _e( 'Add: Footer Menu', 'mudra' ); ?></a></li>
-					</ul>
-					<?php endif; ?>
 
 				</nav><!-- #footer-nav -->
 

@@ -7,6 +7,53 @@
  * @package mudra
  */
 
+
+if ( ! function_exists( 'mudra_top_fallback_menu' ) ) :
+/**
+ * Top fallback menu
+ */
+function mudra_top_fallback_menu() {
+	$args = array(
+		'echo'             => 0,
+		'title_li'         => ''
+	);
+
+	echo '<div><ul id="top-menu" class="sf-menu">' . wp_list_pages( $args ) . '</ul></div>';
+}
+endif;
+
+
+if ( ! function_exists( 'mudra_header_fallback_menu' ) ) :
+/**
+ * Header fallback menu
+ */
+function mudra_header_fallback_menu() {
+	$args = array(
+		'echo'             => 0,
+		'title_li'         => '',
+		'show_option_none' => ''
+	);
+
+	echo '<div><ul id="header-menu" class="sf-menu">' . wp_list_categories( $args ) . '</ul></div>';
+}
+endif;
+
+
+if ( ! function_exists( 'mudra_footer_fallback_menu' ) ) :
+/**
+ * Footer fallback menu
+ */
+function mudra_footer_fallback_menu() {
+	$args = array(
+		'echo'             => 0,
+		'title_li'         => ''
+	);
+
+	echo '<div><ul id="footer-menu" class="sf-menu">' . wp_list_pages( $args ) . '</ul></div>';
+}
+endif;
+
+
 if ( ! function_exists( 'mudra_custom_excerpt_length' ) ) :
 /**
  * Filter the excerpt length.
@@ -36,23 +83,30 @@ if ( ! function_exists( 'mudra_entry_date' ) ) :
  */
 function mudra_entry_date( $entry_date ) {
 
+	$posted = __( 'Posted on:', 'mudra' );
+	$updated = __( 'Last updated on:', 'mudra' );
+
 	if ( 'posted_date' === $entry_date ) :
 		printf(
-			__( 'Posted on: <time class="published" itemprop="datePublished" datetime="%1$s">%2$s</time>', 'mudra' ),
+			'%1$s <time class="published" itemprop="datePublished" datetime="%2$s">%3$s</time>',
+			esc_html( $posted ),
 			esc_attr( get_the_date( DATE_W3C ) ),
 			esc_html( get_the_date() )
 		);
 	elseif ( 'updated_date' === $entry_date ) :
 		printf(
-			__( 'Last updated on: <time class="modified" itemprop="dateModified" datetime="%1$s">%2$s</time>', 'mudra' ),
+			'%1$s <time class="modified" itemprop="dateModified" datetime="%2$s">%3$s</time>',
+			esc_html( $updated ),
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
 			esc_html( get_the_modified_date() )
 		);
 	elseif ( 'posted_updated_date' === $entry_date ) :
 		printf(
-			__( 'Posted on: <time class="published" itemprop="datePublished" datetime="%1$s">%2$s</time> <span>&vert;</span> Last updated on: <time class="modified" itemprop="dateModified" datetime="%3$s">%4$s</time>', 'mudra' ),
+			'%1$s <time class="published" itemprop="datePublished" datetime="%2$s">%3$s</time> <span>&vert;</span> %4$s <time class="modified" itemprop="dateModified" datetime="%5$s">%6$s</time>',
+			esc_html( $posted ),
 			esc_attr( get_the_date( DATE_W3C ) ),
 			esc_html( get_the_date() ),
+			esc_html( $updated ),
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
 			esc_html( get_the_modified_date() )
 		);
@@ -90,7 +144,7 @@ function mudra_entry_footer() {
 						if ( $categories_list && mudra_categorized_blog() ) {
 							printf (
 								'<div class="cat-links">%1$s <span class="screen-reader-text">%1$s</span>%2$s</div>',
-								__( 'Filed Under:', 'mudra' ),
+								esc_html__( 'Filed Under:', 'mudra' ),
 								$categories_list
 							);
 						}
@@ -98,7 +152,7 @@ function mudra_entry_footer() {
 						if ( $tags_list && ! is_wp_error( $tags_list ) ) {
 							printf (
 								'<div class="tags-links">%1$s <span class="screen-reader-text">%1$s</span>%2$s</div>',
-								__( 'Tagged With:', 'mudra' ),
+								esc_html__( 'Tagged With:', 'mudra' ),
 								$tags_list
 							);
 						}

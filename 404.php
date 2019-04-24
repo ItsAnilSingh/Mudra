@@ -20,10 +20,10 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 					<header class="entry-header">
-						<h1 class="entry-title" itemprop="headline"><?php _e( 'Error 404: Page not found.', 'mudra' ); ?></h1>
+						<h1 class="entry-title" itemprop="headline"><?php esc_html_e( 'Error 404: Page not found.', 'mudra' ); ?></h1>
 					</header><!-- .page-header -->
 					<div class="entry-content" itemprop="text">
-						<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'mudra' ); ?></p>
+						<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'mudra' ); ?></p>
 
 						<?php get_search_form(); ?>
 

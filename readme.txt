@@ -2,7 +2,7 @@
 Contributors: ItsAnilSingh
 Requires at least: WordPress 4.5
 Tested up to: WordPress 5.0.3
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, entertainment, news, one-column, two-columns, right-sidebar, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
@@ -63,6 +63,10 @@ License: Creative Commons CC0 1.0
 Source: https://pixabay.com/en/technology-robot-futuristic-android-3940288/
 
 == Changelog ==
+
+= 1.0.2 - April 24 2019 =
+* Various WordPress coding standards fixes
+* Updated for better user experience
 
 = 1.0.1 - February 22 2019 =
 * Fixed issues to meet the WordPress coding standards

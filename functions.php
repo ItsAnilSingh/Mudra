@@ -8,7 +8,29 @@
  */
 
 // Set theme version
-define( 'MUDRA_VERSION', '1.0.1' );
+define( 'MUDRA_VERSION', '1.0.2' );
+define( 'REQUIRED_PHP_VERSION', '5.4.0' );
+
+/**
+ * Check for the minimum php version required.
+ * If php version < 5.4.0, notify the admin and then revert back to the previous theme.
+ */
+function mudra_theme_req() {
+	if ( version_compare( phpversion(), REQUIRED_PHP_VERSION, '<' ) ) :
+		add_action( 'admin_notices', 'mudra_admin_notice' );
+		function mudra_admin_notice() {
+			printf(
+				'<div class="update-nag">%1$s<br />%2$s %3$s</div>',
+				esc_html__( 'You need to update your PHP version in order to activate and use the Mudra theme.', 'mudra' ),
+				esc_html__( 'Minimum PHP version required:', 'mudra' ),
+				esc_html( REQUIRED_PHP_VERSION )
+			);
+		}
+		switch_theme( get_option( 'theme_switched' ) );
+		return false;
+	endif;
+}
+add_action( 'after_switch_theme', 'mudra_theme_req' );
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -112,7 +134,7 @@ function mudra_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Blog Sidebar', 'mudra' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'primary',
 		'description'   => __( 'Add widgets here to appear in your blog sidebar.', 'mudra' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',

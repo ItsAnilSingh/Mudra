@@ -34,7 +34,7 @@ add_filter( 'body_class', 'mudra_body_classes' );
  */
 function mudra_pingback_header() {
 	if ( is_singular() && pings_open() ) {
-		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+		printf( '<link rel="pingback" href="%s">' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
 add_action( 'wp_head', 'mudra_pingback_header' );
@@ -110,34 +110,34 @@ function mudra_breadcrumbs() {
 		printf(
 			'<div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><span class="breadcrumbs-nav"><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="%1$s" title="%2$s" itemprop="item"><span itemprop="name">%2$s</span></a><meta itemprop="position" content="1"></span>%3$s',
 			esc_url( home_url() ),
-			__( 'Home', 'mudra' ),
-			$sep
+			esc_html__( 'Home', 'mudra' ),
+			esc_attr( $sep )
 		);
 
 		if ( is_archive() ) :
 			if ( is_category() ) :
 				$cat_title = single_cat_title( '', false );
-				printf( '<span>%s</span>', $cat_title );
+				printf( '<span>%s</span>', esc_html( $cat_title ) );
 			elseif ( is_day() ) :
 				printf(
 					'<span>%1$s %2$s</span>',
-					__( 'Archives for', 'mudra' ),
+					esc_html__( 'Archives for', 'mudra' ),
 					get_the_date()
 				);
 			elseif ( is_month() ) :
 				printf(
 					'<span>%1$s %2$s</span>',
-					__( 'Archives for', 'mudra' ),
+					esc_html__( 'Archives for', 'mudra' ),
 					get_the_date( _x( 'F Y', 'monthly archives date format', 'mudra' ) )
 				);
 			elseif ( is_year() ) :
 				printf(
 					'<span>%1$s %2$s</span>',
-					__( 'Archives for', 'mudra' ),
+					esc_html__( 'Archives for', 'mudra' ),
 					get_the_date( _x( 'Y', 'yearly archives date format', 'mudra' ) )
 				);
 			else :
-				printf( '<span>%s</span>', __( 'Blog Archives', 'mudra' ) );
+				printf( '<span>%s</span>', esc_html__( 'Blog Archives', 'mudra' ) );
 			endif;
 		endif;
 
@@ -148,25 +148,26 @@ function mudra_breadcrumbs() {
 					'<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="%1$s" title="%2$s" itemprop="item"><span itemprop="name">%2$s</span></a><meta itemprop="position" content="2"></span>%3$s',
 					esc_url( get_category_link( $categories[0]->term_id ) ),
 					esc_html( $categories[0]->name ),
-					$sep
+					esc_attr( $sep )
 				);
 			endif;
-			printf( '<span>%s</span>', esc_html( get_the_title() ) );
+			printf( '<span>%s</span>', esc_html( strip_tags( get_the_title() ) ) );
 		endif;
 
 		if ( is_page() ) :
-			printf( '<span>%s</span>', esc_html( get_the_title() ) );
+			printf( '<span>%s</span>', esc_html( strip_tags( get_the_title() ) ) );
 		endif;
 
 		if ( is_search() ) :
 			printf(
-				__( '<span>You searched for: %s</span>', 'mudra' ),
+				'<span>%1$s %2$s</span>',
+				esc_html__( 'You searched for:', 'mudra' ),
 				get_search_query()
 			);
 		endif;
 
 		if ( is_404() ) :
-			printf( '<span>%s</span>', __( 'Error 404: Page not found.', 'mudra' ) );
+			printf( '<span>%s</span>', esc_html__( 'Error 404: Page not found.', 'mudra' ) );
 		endif;
 
 		printf( '</span></div>' );

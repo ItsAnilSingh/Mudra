@@ -23,13 +23,16 @@ function mudra_customizer_css() {
 		<style type="text/css">
 		<?php if ( ! empty( $text_color ) ) : ?>
 
-			body {
+			body,
+			blockquote,
+			.breadcrumbs .breadcrumbs-nav {
 				color: <?php echo sanitize_hex_color( $text_color ); ?>;
 			}
 		<?php endif; ?>
 		<?php if ( ! empty( $link_color ) ) : ?>
 
-			a {
+			a,
+			.breadcrumbs .breadcrumbs-nav a {
 				color: <?php echo sanitize_hex_color( $link_color ); ?>;
 			}
 		<?php endif; ?>

@@ -22,7 +22,7 @@
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'mudra' ); ?></a> <a class="skip-link screen-reader-text" href="#secondary"><?php _e( 'Skip to blog sidebar', 'mudra' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'mudra' ); ?></a> <a class="skip-link screen-reader-text" href="#secondary"><?php esc_html_e( 'Skip to blog sidebar', 'mudra' ); ?></a>
 
 	<header class="site-header" itemscope itemtype="http://schema.org/WPHeader">
 
@@ -34,25 +34,20 @@
 			<nav id="top-nav" class="top-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="<?php esc_attr_e( 'Top Menu', 'mudra' ); ?>">
 
 			<?php
-				if ( has_nav_menu( 'top' ) ) :
-					wp_nav_menu( array(
-						'theme_location' => 'top',
-						'menu_id'        => 'top-menu',
-						'menu_class'     => 'sf-menu',
-						'link_before'    => '<span itemprop="name">',
-						'link_after'     => '</span>'
-					) );
-				elseif ( current_user_can( 'edit_theme_options' ) ) :
+				wp_nav_menu( array(
+					'theme_location' => 'top',
+					'menu_id'        => 'top-menu',
+					'menu_class'     => 'sf-menu',
+					'fallback_cb'    => 'mudra_top_fallback_menu',
+					'link_before'    => '<span itemprop="name">',
+					'link_after'     => '</span>'
+				) );
 			?>
-			<ul id="top-menu" class="sf-menu">
-				<li><a href="<?php echo esc_url( home_url() ); ?>/wp-admin/nav-menus.php"><?php _e( 'Add: Top Menu', 'mudra' ); ?></a></li>
-			</ul>
-			<?php endif; ?>
 
 			</nav><!-- #top-nav -->
 
 			<?php
-				if ( true == get_theme_mod( 'social_links', true ) ) :
+				if ( true == get_theme_mod( 'social_links', false ) ) :
 					get_template_part( 'template-parts/header/social', 'links' );
 				endif;
 			?>
@@ -89,20 +84,15 @@
 			<nav id="header-nav" class="header-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="<?php esc_attr_e( 'Header Menu', 'mudra' ); ?>">
 
 				<?php
-					if ( has_nav_menu( 'header' ) ) :
-						wp_nav_menu( array(
-							'theme_location' => 'header',
-							'menu_id'        => 'header-menu',
-							'menu_class'     => 'sf-menu',
-							'link_before'    => '<span itemprop="name">',
-							'link_after'     => '</span>'
-						) );
-					elseif ( current_user_can( 'edit_theme_options' ) ) :
+					wp_nav_menu( array(
+						'theme_location' => 'header',
+						'menu_id'        => 'header-menu',
+						'menu_class'     => 'sf-menu',
+						'fallback_cb'    => 'mudra_header_fallback_menu',
+						'link_before'    => '<span itemprop="name">',
+						'link_after'     => '</span>'
+					) );
 				?>
-				<ul id="header-menu" class="sf-menu">
-					<li><a href="<?php echo esc_url( home_url() ); ?>/wp-admin/nav-menus.php"><?php _e( 'Add: Header Menu', 'mudra' ); ?></a></li>
-				</ul>
-				<?php endif; ?>
 
 			</nav><!-- #header-nav -->
 

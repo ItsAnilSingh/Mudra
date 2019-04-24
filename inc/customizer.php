@@ -129,18 +129,18 @@ function mudra_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'top_bar', array(
 		'type'              => 'checkbox',
 		'section'           => 'top_bar_settings',
-		'label'             => __( 'Enable Top Bar', 'mudra' ),
+		'label'             => __( 'Display Top Bar', 'mudra' ),
 	) );
 
 	// Social links
 	$wp_customize->add_setting( 'social_links', array(
-		'default'           => true,
+		'default'           => false,
 		'sanitize_callback' => 'mudra_sanitize_checkbox',
 	) );
 	$wp_customize->add_control( 'social_links', array(
 		'type'              => 'checkbox',
 		'section'           => 'top_bar_settings',
-		'label'             => __( 'Enable Social Links', 'mudra' ),
+		'label'             => __( 'Display Social Links', 'mudra' ),
 	) );
 
 	// Social sites
@@ -198,7 +198,7 @@ function mudra_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'mudra_breadcrumbs', array(
 		'type'              => 'checkbox',
 		'section'           => 'post_header_settings',
-		'label'             => __( 'Enable Breadcrumbs', 'mudra' ),
+		'label'             => __( 'Display Breadcrumbs', 'mudra' ),
 	) );
 
 	// Archive settings
@@ -218,7 +218,7 @@ function mudra_customize_register( $wp_customize ) {
 		'section'           => 'archive_settings',
 		'label'             => __( 'Select Entry Date', 'mudra' ),
 		'choices'           => array(
-			'disable'             => __( 'Disable', 'mudra' ),
+			'disable'             => __( 'Hide', 'mudra' ),
 			'posted_date'         => __( 'Posted on', 'mudra' ),
 			'updated_date'        => __( 'Last updated on', 'mudra' ),
 			'posted_updated_date' => __( 'Posted on & Last updated on', 'mudra' ),
@@ -233,7 +233,7 @@ function mudra_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'archive_entry_author', array(
 		'type'              => 'checkbox',
 		'section'           => 'archive_settings',
-		'label'             => __( 'Enable Entry Author', 'mudra' ),
+		'label'             => __( 'Display Entry Author', 'mudra' ),
 	) );
 
 	// Archive entry comments
@@ -244,7 +244,7 @@ function mudra_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'archive_entry_comments', array(
 		'type'              => 'checkbox',
 		'section'           => 'archive_settings',
-		'label'             => __( 'Enable Entry Comments', 'mudra' ),
+		'label'             => __( 'Display Entry Comments', 'mudra' ),
 	) );
 
 	// Archive featured images
@@ -255,7 +255,7 @@ function mudra_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'archive_featured_images', array(
 		'type'              => 'checkbox',
 		'section'           => 'archive_settings',
-		'label'             => __( 'Enable Featured Images', 'mudra' ),
+		'label'             => __( 'Display Featured Images', 'mudra' ),
 	) );
 
 	// Excerpt length
@@ -288,7 +288,7 @@ function mudra_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'archive_entry_footer', array(
 		'type'              => 'checkbox',
 		'section'           => 'archive_settings',
-		'label'             => __( 'Enable Entry Footer', 'mudra' ),
+		'label'             => __( 'Display Entry Footer', 'mudra' ),
 	) );
 
 	// Post settings
@@ -308,7 +308,7 @@ function mudra_customize_register( $wp_customize ) {
 		'section'           => 'single_settings',
 		'label'             => __( 'Select Entry Date', 'mudra' ),
 		'choices'           => array(
-			'disable'             => __( 'Disable', 'mudra' ),
+			'disable'             => __( 'Hide', 'mudra' ),
 			'posted_date'         => __( 'Posted on', 'mudra' ),
 			'updated_date'        => __( 'Last updated on', 'mudra' ),
 			'posted_updated_date' => __( 'Posted on & Last updated on', 'mudra' ),
@@ -323,7 +323,7 @@ function mudra_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'single_entry_author', array(
 		'type'              => 'checkbox',
 		'section'           => 'single_settings',
-		'label'             => __( 'Enable Entry Author', 'mudra' ),
+		'label'             => __( 'Display Entry Author', 'mudra' ),
 	) );
 
 	// Post entry comments
@@ -334,7 +334,7 @@ function mudra_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'single_entry_comments', array(
 		'type'              => 'checkbox',
 		'section'           => 'single_settings',
-		'label'             => __( 'Enable Entry Comments', 'mudra' ),
+		'label'             => __( 'Display Entry Comments', 'mudra' ),
 	) );
 
 	// Post featured image
@@ -345,7 +345,7 @@ function mudra_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'single_featured_image', array(
 		'type'              => 'checkbox',
 		'section'           => 'single_settings',
-		'label'             => __( 'Enable Featured Image', 'mudra' ),
+		'label'             => __( 'Display Featured Image', 'mudra' ),
 	) );
 
 	// Post entry footer
@@ -356,7 +356,7 @@ function mudra_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'single_entry_footer', array(
 		'type'              => 'checkbox',
 		'section'           => 'single_settings',
-		'label'             => __( 'Enable Entry Footer', 'mudra' ),
+		'label'             => __( 'Display Entry Footer', 'mudra' ),
 	) );
 
 	// Author box
@@ -367,7 +367,7 @@ function mudra_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'author_box', array(
 		'type'              => 'checkbox',
 		'section'           => 'single_settings',
-		'label'             => __( 'Enable Author Box', 'mudra' ),
+		'label'             => __( 'Display Author Box', 'mudra' ),
 	) );
 
 	// Related posts
@@ -380,7 +380,7 @@ function mudra_customize_register( $wp_customize ) {
 		'section'           => 'single_settings',
 		'label'             => __( 'Related Posts', 'mudra' ),
 		'choices'           => array(
-			'disable'       => __( 'Disable', 'mudra' ),
+			'disable'       => __( 'Hide', 'mudra' ),
 			'categories'    => __( 'By Categories', 'mudra' ),
 			'tags'          => __( 'By Tags', 'mudra' ),
 		),
@@ -401,7 +401,7 @@ function mudra_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'footer_widgets', array(
 		'type'              => 'checkbox',
 		'section'           => 'footer_settings',
-		'label'             => __( 'Enable Footer Widgets', 'mudra' ),
+		'label'             => __( 'Display Footer Widgets', 'mudra' ),
 	) );
 
 	// Copyright text

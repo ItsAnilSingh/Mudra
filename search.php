@@ -20,7 +20,7 @@ get_header(); ?>
 
 			printf(
 				'<header class="page-header"><h1 class="page-title">%1$s: <span>%2$s</span></h1></header>',
-				__( 'Search Results for', 'mudra' ),
+				esc_html__( 'Search Results for', 'mudra' ),
 				get_search_query()
 			);
 
