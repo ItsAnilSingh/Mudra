@@ -2,7 +2,7 @@
 Contributors: ItsAnilSingh
 Requires at least: WordPress 4.5
 Tested up to: WordPress 5.0.3
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, entertainment, news, one-column, two-columns, right-sidebar, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
@@ -58,11 +58,14 @@ Open Sans font, Copyright 2010-2011 Google Corporation
 License: Apache License, Version 2.0
 Source: https://fonts.google.com/specimen/Open+Sans
 
-Featured Image used in screenshot.png, Copyright 2019 Pixabay.com
-License: Creative Commons CC0 1.0
-Source: https://pixabay.com/en/technology-robot-futuristic-android-3940288/
+Featured Image used in screenshot.png, Copyright StockSnap
+License: Creative Commons CC0
+Source: https://stocksnap.io/photo/QG7ACWH2TZ
 
 == Changelog ==
+
+= 1.0.3 - May 07 2019 =
+* Screenshot related changes
 
 = 1.0.2 - April 24 2019 =
 * Various WordPress coding standards fixes
