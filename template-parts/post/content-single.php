@@ -82,14 +82,26 @@
 		</h5>
 		<span class="author-desc" itemprop="description"><?php the_author_meta( 'description' ); ?></span>
 		<div class="post-author-links">
+		<?php if ( get_the_author_meta( 'url' ) != '' ) : ?>
+			<a class="url" title="<?php esc_attr_e( 'Visit Website', 'mudra' ); ?>" href="<?php echo esc_url( get_the_author_meta( 'url' ) ); ?>" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a>
+		<?php endif; ?>
 		<?php if ( get_the_author_meta( 'facebook' ) != '' ) : ?>
-			<a class="facebook" title="<?php esc_attr_e( 'Follow on Facebook', 'mudra' ); ?>" href="<?php echo esc_attr( get_the_author_meta( 'facebook' ) ); ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			<a class="facebook" title="<?php esc_attr_e( 'Follow on Facebook', 'mudra' ); ?>" href="<?php echo esc_url( get_the_author_meta( 'facebook' ) ); ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 		<?php endif; ?>
 		<?php if ( get_the_author_meta( 'twitter' ) != '' ) : ?>
 			<a class="twitter" title="<?php esc_attr_e( 'Follow on Twitter', 'mudra' ); ?>" href="<?php echo esc_url( 'https://twitter.com/' ) . esc_attr( get_the_author_meta( 'twitter' ) ); ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 		<?php endif; ?>
-		<?php if ( get_the_author_meta( 'googleplus' ) != '' ) : ?>
-			<a class="googleplus" title="<?php esc_attr_e( 'Follow on Google+', 'mudra' ); ?>" href="<?php echo esc_attr( get_the_author_meta( 'googleplus' ) ); ?>" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+		<?php if ( get_the_author_meta( 'instagram' ) != '' ) : ?>
+			<a class="instagram" title="<?php esc_attr_e( 'Follow on Instagram', 'mudra' ); ?>" href="<?php echo esc_url( get_the_author_meta( 'instagram' ) ); ?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+		<?php endif; ?>
+		<?php if ( get_the_author_meta( 'linkedin' ) != '' ) : ?>
+			<a class="linkedin" title="<?php esc_attr_e( 'Follow on LinkedIn', 'mudra' ); ?>" href="<?php echo esc_url( get_the_author_meta( 'linkedin' ) ); ?>" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+		<?php endif; ?>
+		<?php if ( get_the_author_meta( 'pinterest' ) != '' ) : ?>
+			<a class="pinterest" title="<?php esc_attr_e( 'Follow on Pinterest', 'mudra' ); ?>" href="<?php echo esc_url( get_the_author_meta( 'pinterest' ) ); ?>" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+		<?php endif; ?>
+		<?php if ( get_the_author_meta( 'youtube' ) != '' ) : ?>
+			<a class="youtube" title="<?php esc_attr_e( 'Follow on Youtube', 'mudra' ); ?>" href="<?php echo esc_url( get_the_author_meta( 'youtube' ) ); ?>" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
 		<?php endif; ?>
 		</div>
 	</div>

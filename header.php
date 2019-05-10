@@ -73,7 +73,7 @@
 
 			<div id="slick-mobile-menu"></div>
 
-			<?php dynamic_sidebar( 'header-ad' ); ?>
+			<?php dynamic_sidebar( 'header-widget' ); ?>
 
 			</div><!-- .container -->
 		</div><!-- #header-main -->

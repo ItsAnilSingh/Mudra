@@ -21,14 +21,14 @@
 			the_title( sprintf(
 				'<h3 class="entry-title" itemprop="headline"><a href="%1$s" rel="bookmark" title="%2$s">',
 				esc_url( get_permalink() ),
-				esc_html( get_the_title() ) ),
+				the_title_attribute( 'echo=0' ) ),
 				'</a></h3>'
 			);
 		else :
 			the_title( sprintf(
 				'<h2 class="entry-title" itemprop="headline"><a href="%1$s" rel="bookmark" title="%2$s">',
 				esc_url( get_permalink() ),
-				esc_html( get_the_title() ) ),
+				the_title_attribute( 'echo=0' ) ),
 				'</a></h2>'
 			);
 		endif;
@@ -39,7 +39,7 @@
 	<?php
 		if ( true == get_theme_mod( 'archive_featured_images', true ) ) :
 			if ( has_post_thumbnail() && ( get_the_post_thumbnail() != '' ) ) :
-				echo '<a class="featured-image" href="'. esc_url( get_permalink() ) .'" title="'. esc_attr( get_the_title() ) .'">';
+				echo '<a class="featured-image" href="'. esc_url( get_permalink() ) .'" title="'. the_title_attribute( 'echo=0' ) .'">';
 				echo '<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject">';
 				the_post_thumbnail( 'mudra-featured-image' );
 				$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'mudra-featured-image' );

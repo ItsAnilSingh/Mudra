@@ -21,7 +21,7 @@
 			<div id="<?php echo esc_attr( $id ); ?>" class="related-post">
 			<?php
 				if ( has_post_thumbnail() && ( get_the_post_thumbnail() != '' ) ) :
-					echo '<a href="'. esc_url( get_permalink() ) .'" title="'. esc_attr( get_the_title() ) .'">';
+					echo '<a href="'. esc_url( get_permalink() ) .'" title="'. the_title_attribute( 'echo=0' ) .'">';
 					echo '<div class="related-image">';
 					echo get_the_post_thumbnail( null, 'mudra-related-image', array( 'alt' => the_title_attribute( array( 'echo' => false ) ) ) );
 					echo '</div>';
@@ -29,7 +29,7 @@
 				endif;
 			?>
 				<h2 class="entry-title">
-					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 				</h2>
 			</div><!-- .related-post -->
 	<?php

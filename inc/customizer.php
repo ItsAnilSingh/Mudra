@@ -163,13 +163,18 @@ function mudra_customize_register( $wp_customize ) {
 
 	// Sticky header navigation
 	$wp_customize->add_setting( 'sticky_header_nav', array(
-		'default'           => true,
-		'sanitize_callback' => 'mudra_sanitize_checkbox',
+		'default'           => 'disable',
+		'sanitize_callback' => 'mudra_sanitize_select',
 	) );
 	$wp_customize->add_control( 'sticky_header_nav', array(
-		'type'              => 'checkbox',
+		'type'              => 'select',
 		'section'           => 'header_bar_settings',
 		'label'             => __( 'Sticky Header Menu', 'mudra' ),
+		'choices'           => array(
+			'disable'       => __( 'Disable', 'mudra' ),
+			'always'        => __( 'Always', 'mudra' ),
+			'scroll_up'     => __( 'On Scroll Up', 'mudra' ),
+		),
 	) );
 
 	// Header search
@@ -372,7 +377,7 @@ function mudra_customize_register( $wp_customize ) {
 
 	// Related posts
 	$wp_customize->add_setting( 'related_posts', array(
-		'default'           => 'categories',
+		'default'           => 'disable',
 		'sanitize_callback' => 'mudra_sanitize_select',
 	) );
 	$wp_customize->add_control( 'related_posts', array(
@@ -476,7 +481,7 @@ function mudra_get_social_sites() {
 	$social_sites = array(
 		'facebook',
 		'twitter',
-		'google+',
+		'linkedin',
 		'instagram',
 		'pinterest',
 		'youtube',

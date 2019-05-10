@@ -91,8 +91,8 @@ function mudra_setup() {
 
 	// Add theme support for Custom Logo.
 	add_theme_support( 'custom-logo', array(
-		'width'       => 250,
-		'height'      => 250,
+		'width'       => 220,
+		'height'      => 60,
 		'flex-width'  => true,
 	) );
 
@@ -143,10 +143,10 @@ function mudra_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Header Advertisement', 'mudra' ),
-		'id'            => 'header-ad',
-		'description'   => __( 'Add advertisement widget here.', 'mudra' ),
-		'before_widget' => '<div id="%1$s" class="header-ad %2$s">',
+		'name'          => __( 'Header Widget', 'mudra' ),
+		'id'            => 'header-widget',
+		'description'   => __( 'Add header widget here.', 'mudra' ),
+		'before_widget' => '<div id="%1$s" class="header-widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
@@ -232,8 +232,12 @@ function mudra_scripts () {
 
 	// Custom Mudra Scripts
 	wp_enqueue_script( 'mudra-script', get_template_directory_uri() . '/assets/js/mudra.js', array(), MUDRA_VERSION, true );
-	if ( true == get_theme_mod( 'sticky_header_nav', true ) ) :
-		wp_enqueue_script( 'mudra-sticky', get_template_directory_uri() . '/assets/js/sticky.js', array(), MUDRA_VERSION, true );
+	if ( 'disable' !== get_theme_mod( 'sticky_header_nav' ) ) :
+		if ( 'always' === get_theme_mod( 'sticky_header_nav' ) ) :
+			wp_enqueue_script( 'mudra-sticky', get_template_directory_uri() . '/assets/js/sticky.js', array(), MUDRA_VERSION, true );
+		else :
+			wp_enqueue_script( 'mudra-sticky', get_template_directory_uri() . '/assets/js/sticky_scroll_up.js', array(), MUDRA_VERSION, true );
+		endif;
 	endif;
 
 	// Modernizr

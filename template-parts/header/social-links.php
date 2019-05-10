@@ -5,8 +5,8 @@
 <?php if ( get_theme_mod( 'twitter', '' ) ) : ?>
 	<a class="twitter" href="<?php echo esc_url( get_theme_mod( 'twitter', '' ) ); ?>" title="<?php esc_attr_e( 'Follow us on Twitter', 'mudra' ); ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 <?php endif; ?>
-<?php if ( get_theme_mod( 'google+', '' ) ) : ?>
-	<a class="google-plus" href="<?php echo esc_url( get_theme_mod( 'google+', '' ) ); ?>" title="<?php esc_attr_e( 'Follow us on Google+', 'mudra' ); ?>" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+<?php if ( get_theme_mod( 'linkedin', '' ) ) : ?>
+	<a class="linkedin" href="<?php echo esc_url( get_theme_mod( 'linkedin', '' ) ); ?>" title="<?php esc_attr_e( 'Follow us on LinkedIn', 'mudra' ); ?>" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
 <?php endif; ?>
 <?php if ( get_theme_mod( 'instagram', '' ) ) : ?>
 	<a class="instagram" href="<?php echo esc_url( get_theme_mod( 'instagram', '' ) ); ?>" title="<?php esc_attr_e( 'Follow us on Instagram', 'mudra' ); ?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>

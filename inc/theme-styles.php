@@ -26,14 +26,14 @@ function mudra_customizer_css() {
 			body,
 			blockquote,
 			.breadcrumbs .breadcrumbs-nav {
-				color: <?php echo sanitize_hex_color( $text_color ); ?>;
+				color: <?php echo esc_attr( $text_color ); ?>;
 			}
 		<?php endif; ?>
 		<?php if ( ! empty( $link_color ) ) : ?>
 
 			a,
 			.breadcrumbs .breadcrumbs-nav a {
-				color: <?php echo sanitize_hex_color( $link_color ); ?>;
+				color: <?php echo esc_attr( $link_color ); ?>;
 			}
 		<?php endif; ?>
 		<?php if ( ! empty( $hover_color ) ) : ?>
@@ -48,7 +48,7 @@ function mudra_customizer_css() {
 			.slicknav_nav li.current-menu-item a,
 			.slicknav_nav .slicknav_row:hover,
 			.breadcrumbs .breadcrumbs-nav a:hover {
-				color: <?php echo sanitize_hex_color( $hover_color ); ?>;
+				color: <?php echo esc_attr( $hover_color ); ?>;
 			}
 		<?php endif; ?>
 		<?php if ( ! empty( $button_color ) ) : ?>
@@ -61,7 +61,7 @@ function mudra_customizer_css() {
 			.read-more a:visited,
 			.pagination .page-numbers,
 			.top-arrow {
-				background-color: <?php echo sanitize_hex_color( $button_color ); ?> !important;
+				background-color: <?php echo esc_attr( $button_color ); ?> !important;
 			}
 		<?php endif; ?>
 		<?php if ( ! empty( $button_hover_color ) ) : ?>
@@ -79,7 +79,7 @@ function mudra_customizer_css() {
 			.pagination .current,
 			.pagination .page-numbers:focus,
 			.pagination .page-numbers:hover {
-				background-color: <?php echo sanitize_hex_color( $button_hover_color ); ?> !important;
+				background-color: <?php echo esc_attr( $button_hover_color ); ?> !important;
 			}
 		<?php endif; ?>
 

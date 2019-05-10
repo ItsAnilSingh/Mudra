@@ -71,7 +71,7 @@ if ( ! function_exists( 'mudra_custom_excerpt_more' ) ) :
  * Customize the excerpt more.
  */
 function mudra_custom_excerpt_more( $more ) {
-	return ' &hellip;';
+	return is_admin() ? $more : ' &hellip;';
 }
 add_filter( 'excerpt_more', 'mudra_custom_excerpt_more' );
 endif;

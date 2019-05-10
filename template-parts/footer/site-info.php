@@ -19,7 +19,7 @@
 
 	printf(
 		'&copy; %1$s <a href="%2$s" title="%3$s">%3$s</a>. %4$s.',
-		date_i18n( date( 'Y' ) ),
+		esc_attr( date_i18n( __( 'Y', 'mudra' ) ) ),
 		esc_url( home_url() ),
 		esc_html( get_bloginfo( 'name' ) ),
 		esc_html( $copyright_text )

@@ -1,7 +1,7 @@
 === Mudra ===
 Contributors: ItsAnilSingh
 Requires at least: WordPress 4.5
-Tested up to: WordPress 5.0.3
+Tested up to: WordPress 5.1.1
 Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -46,7 +46,7 @@ SlickNav Responsive Mobile Menu, Copyright 2016 Josh Cope
 License: MIT
 Source: https://github.com/ComputerWolf/SlickNav
 
-Modernizr, Copyright 2017 Alexander Farkas
+Modernizr, Copyright Faruk Ates, Paul Irish, Alex Sexton
 License: MIT/BSD
 Source: https://github.com/Modernizr/Modernizr
 
@@ -63,6 +63,12 @@ License: Creative Commons CC0
 Source: https://stocksnap.io/photo/QG7ACWH2TZ
 
 == Changelog ==
+
+= 1.0.4 - May  2019 =
+* 'Sticky Header Menu' can now be set to either 'Always' or 'On Scroll Up'
+* Related posts hidden by default
+* Updated Modernizr to v2.6.3
+* Fixed some coding and security issues
 
 = 1.0.3 - May 07 2019 =
 * Screenshot related changes

@@ -14,7 +14,7 @@
 	<?php
 		if ( true == get_theme_mod( 'archive_featured_images', true ) ) :
 			if ( has_post_thumbnail() && ( get_the_post_thumbnail() != '' ) ) :
-				echo '<a class="post-thumbnail" href="'. esc_url( get_permalink() ) .'" title="'. esc_attr( get_the_title() ) .'">';
+				echo '<a class="post-thumbnail" href="'. esc_url( get_permalink() ) .'" title="'. the_title_attribute( 'echo=0' ) .'">';
 				echo '<span itemprop="image" itemscope itemtype="http://schema.org/ImageObject">';
 				the_post_thumbnail( 'medium' );
 				$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
@@ -28,7 +28,7 @@
 	?>
 
 	<h2 class="entry-title" itemprop="headline">
-		<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+		<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 	</h2><!--/.entry-title-->
 
 	<div class="entry-summary" itemprop="text">
