@@ -18,19 +18,17 @@ function mudra_custom_header_setup() {
 	 * Filter mudra custom-header support arguments.
 	 *
 	 * @type string $default-image     	    Default image of the header.
-	 * @type string $default_text_color     Default color of the header text.
-	 * @type int    $width                  Width in pixels of the custom header image. Default 1000.
-	 * @type int    $height                 Height in pixels of the custom header image. Default 250.
-	 * @type string $flex-height     	    Flex support for height of header.
+	 * @type string $default-text-color     Default color of the header text.
+	 * @type int    $width                  Width in pixels of the custom header image. Default 1100.
+	 * @type int    $height                 Height in pixels of the custom header image. Default 120.
 	 * @type string $wp-head-callback       Callback function used to styles the header image and text
 	 *                                      displayed on the blog.
 	 */
 	add_theme_support( 'custom-header', apply_filters( 'mudra_custom_header_args', array(
 		'default-image'      => '',
 		'default-text-color' => '000000',
-		'width'              => 1000,
-		'height'             => 250,
-		'flex-height'        => true,
+		'width'              => 1100,
+		'height'             => 120,
 		'wp-head-callback'   => 'mudra_header_style',
 	) ) );
 }
@@ -56,7 +54,7 @@ function mudra_header_style() {
 	<style id="mudra-custom-header-styles" type="text/css">
 	<?php
 		// Has the text been hidden?
-		if ( 'blank' === $header_text_color ) :
+		if ( ! display_header_text() ) :
 	?>
 		.site-title,
 		.site-description {
@@ -68,8 +66,12 @@ function mudra_header_style() {
 		else :
 	?>
 		.site-title a,
-		.site-description {
+		.site-description,
+		.mobile-toggle {
 			color: #<?php echo esc_attr( $header_text_color ); ?> !important;
+		}
+		.slicknav_btn {
+			background-color: #<?php echo esc_attr( $header_text_color ); ?>;
 		}
 	<?php endif; ?>
 	</style>

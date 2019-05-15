@@ -58,7 +58,7 @@
 		<?php endif; ?>
 
 		<div id="header-main">
-			<div class="container">
+			<div class="container"<?php if ( get_header_image() ) : echo ' id="custom-header" style="background:url(' . esc_url( get_header_image() ) . '); height:100%;"'; endif; ?>>
 
 			<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 

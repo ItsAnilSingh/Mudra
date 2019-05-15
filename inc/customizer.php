@@ -24,7 +24,6 @@ function mudra_customize_register( $wp_customize ) {
 		'render_callback' => 'mudra_customize_partial_blogdescription',
 	) );
 
-	$wp_customize->remove_section( 'header_image' );
 	$wp_customize->remove_section( 'background_image' );
 
 	// Text color
