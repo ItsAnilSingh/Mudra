@@ -60,7 +60,12 @@ if ( ! function_exists( 'mudra_custom_excerpt_length' ) ) :
  */
 function mudra_custom_excerpt_length( $length ) {
 	$custom_length = get_theme_mod( 'excerpt_length', 45 );
-	return is_admin() ? $length : $custom_length;
+
+	if ( is_admin() ) :
+		return $length;
+	endif;
+
+	return is_search() ? 20 : $custom_length;
 }
 add_filter( 'excerpt_length', 'mudra_custom_excerpt_length', 999 );
 endif;

@@ -32,7 +32,7 @@
 	</h2><!--/.entry-title-->
 
 	<div class="entry-summary" itemprop="text">
-		<?php echo esc_html( wp_trim_words( get_the_excerpt(), 25 ) ); ?>
+		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
 	<div class="read-more">
