@@ -1,8 +1,8 @@
 === Mudra ===
 Contributors: ItsAnilSingh
 Requires at least: WordPress 4.5
-Tested up to: WordPress 5.1.1
-Version: 1.0.5
+Tested up to: WordPress 5.2.1
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, entertainment, news, one-column, two-columns, right-sidebar, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
@@ -17,7 +17,8 @@ For more information, go to https://tricksmash.com/mudra/
 
 1. From admin panel, go to Appearance -> Themes and click on the 'Add New' button.
 2. Type 'Mudra' (without quotes) in the search field and press 'Enter' key on the keyboard.
-3. Click on the 'Activate' button.
+3. Hover on the Mudra theme screenshot and then click on the 'Install' button.
+4. Click on the 'Activate' button.
 
 == Copyright ==
 
@@ -63,6 +64,11 @@ License: Creative Commons CC0
 Source: https://stocksnap.io/photo/QG7ACWH2TZ
 
 == Changelog ==
+
+= 1.0.6 - June 01 2019 =
+* Footer copyright related changes
+* Improved compatibility with Gutenberg block styles
+* Updated related posts styles
 
 = 1.0.5 - May 16 2019 =
 * Fixed some more coding issues

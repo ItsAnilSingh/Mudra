@@ -408,6 +408,17 @@ function mudra_customize_register( $wp_customize ) {
 		'label'             => __( 'Display Footer Widgets', 'mudra' ),
 	) );
 
+	// Copyright
+	$wp_customize->add_setting( 'copyright', array(
+		'default'           => true,
+		'sanitize_callback' => 'mudra_sanitize_checkbox',
+	) );
+	$wp_customize->add_control( 'copyright', array(
+		'type'              => 'checkbox',
+		'section'           => 'footer_settings',
+		'label'             => __( 'Display Copyright Notice', 'mudra' ),
+	) );
+
 	// Copyright text
 	$wp_customize->add_setting( 'copyright_text', array(
 		'default'           => __( 'All Rights Reserved', 'mudra' ),
@@ -416,7 +427,7 @@ function mudra_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'copyright_text', array(
 		'type'              => 'text',
 		'section'           => 'footer_settings',
-		'label'             => __( 'Copyright Text', 'mudra' ),
+		'label'             => __( 'Custom Copyright Text', 'mudra' ),
 	) );
 
 	// Support theme

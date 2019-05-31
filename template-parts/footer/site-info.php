@@ -17,13 +17,15 @@
 	if ( '' == $copyright_text )
 		$copyright_text = __( 'All Rights Reserved', 'mudra' );
 
-	printf(
-		'&copy; %1$s <a href="%2$s" title="%3$s">%3$s</a>. %4$s.',
-		esc_attr( date_i18n( __( 'Y', 'mudra' ) ) ),
-		esc_url( home_url() ),
-		esc_html( get_bloginfo( 'name' ) ),
-		esc_html( $copyright_text )
-	);
+	if ( true == get_theme_mod( 'copyright', true ) ) :
+		printf(
+			'&copy; %1$s <a href="%2$s" title="%3$s">%3$s</a>. %4$s.',
+			esc_attr( date_i18n( __( 'Y', 'mudra' ) ) ),
+			esc_url( home_url() ),
+			esc_html( get_bloginfo( 'name' ) ),
+			esc_html( $copyright_text )
+		);
+	endif;
 
 	if ( true == get_theme_mod( 'support_theme', true ) ) :
 		printf(
