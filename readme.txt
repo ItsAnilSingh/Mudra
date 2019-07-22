@@ -1,11 +1,14 @@
 === Mudra ===
 Contributors: ItsAnilSingh
-Requires at least: WordPress 4.5
-Tested up to: WordPress 5.2.1
-Version: 1.0.6
+Donate link: https://www.paypal.me/ItsAnilSingh
+Requires at least: 4.5
+Tested up to: 5.2.2
+Requires PHP: 5.4.0
+Version: 1.0.7
+Stable tag: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: blog, entertainment, news, one-column, two-columns, right-sidebar, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: blog, entertainment, news, one-column, two-columns, right-sidebar, custom-colors, custom-header, custom-background, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 
 == Description ==
 
@@ -64,6 +67,16 @@ License: Creative Commons CC0
 Source: https://stocksnap.io/photo/QG7ACWH2TZ
 
 == Changelog ==
+
+= 1.0.7 - July 22 2019 =
+* Added custom background support
+* Show or hide post navigation
+* Several design related changes and fixes
+* Updated block styles
+* Changed default colors to 'trusted' profile
+* Changed schema links to https
+* Several code adjustments, improvements and fixes
+* Refer GitHub commit for detailed changelog
 
 = 1.0.6 - June 01 2019 =
 * Footer copyright related changes

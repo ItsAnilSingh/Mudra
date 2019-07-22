@@ -2,20 +2,18 @@
 /**
  * Displays footer site info
  *
- * @package mudra
+ * @package Mudra
  */
 
 ?>
 
 <div class="site-info">
-<?php
-	$theme          = __( 'Mudra', 'mudra' );
-	$theme_uri      = 'https://tricksmash.com/mudra/';
-	$author         = 'ItsAnilSingh';
-	$copyright_text = get_theme_mod( 'copyright_text', __( 'All Rights Reserved', 'mudra' ) );
 
-	if ( '' == $copyright_text )
-		$copyright_text = __( 'All Rights Reserved', 'mudra' );
+	<?php
+	$mudra_copyright_text = get_theme_mod( 'copyright_text', __( 'All Rights Reserved', 'mudra' ) );
+
+	if ( '' == $mudra_copyright_text )
+		$mudra_copyright_text = __( 'All Rights Reserved', 'mudra' );
 
 	if ( true == get_theme_mod( 'copyright', true ) ) :
 		printf(
@@ -23,7 +21,7 @@
 			esc_attr( date_i18n( __( 'Y', 'mudra' ) ) ),
 			esc_url( home_url() ),
 			esc_html( get_bloginfo( 'name' ) ),
-			esc_html( $copyright_text )
+			esc_html( $mudra_copyright_text )
 		);
 	endif;
 
@@ -31,10 +29,12 @@
 		printf(
 			' %1$s: <a href="%2$s" rel="nofollow" title="%3$s" target="_blank">%3$s</a> by %4$s.',
 			esc_html__( 'Theme', 'mudra' ),
-			esc_url( $theme_uri ),
-			esc_html( $theme ),
-			esc_html( $author )
+			esc_url( 'https://tricksmash.com/mudra/' ),
+			esc_html__( 'Mudra', 'mudra' ),
+			esc_html( 'ItsAnilSingh' )
 		);
 	endif;
-?>
+	?>
+	&nbsp;
+
 </div><!-- .site-info -->

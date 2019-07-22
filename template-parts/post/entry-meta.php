@@ -1,5 +1,17 @@
-<div class="entry-meta">
 <?php
+if ( ! is_single() ) :
+	if ( 'disable' == get_theme_mod( 'archive_entry_date' ) && false == get_theme_mod( 'archive_entry_author' ) && false == get_theme_mod( 'archive_entry_comments' ) ) :
+		return;
+	endif;
+else :
+	if ( 'disable' == get_theme_mod( 'single_entry_date' ) && false == get_theme_mod( 'single_entry_author' ) && false == get_theme_mod( 'single_entry_comments' ) ) :
+		return;
+	endif;
+endif;
+?>
+
+<div class="entry-meta">
+	<?php
 	if ( ! is_single() ) :
 		if ( 'disable' !== get_theme_mod( 'archive_entry_date' ) ) :
 			printf( '<span class="entry-date">' );
@@ -12,7 +24,7 @@
 			endif;
 			printf( '<span class="entry-author vcard">' );
 			esc_html_e( 'By: ', 'mudra' );
-			printf( '<span itemprop="author" itemscope itemtype="http://schema.org/Person">' );
+			printf( '<span itemprop="author" itemscope itemtype="https://schema.org/Person">' );
 			mudra_author_posts_link();
 			printf( '</span></span>' );
 		endif;
@@ -37,7 +49,7 @@
 			endif;
 			printf( '<span class="entry-author vcard">' );
 			esc_html_e( 'By: ', 'mudra' );
-			printf( '<span itemprop="author" itemscope itemtype="http://schema.org/Person">' );
+			printf( '<span itemprop="author" itemscope itemtype="https://schema.org/Person">' );
 			mudra_author_posts_link();
 			printf( '</span></span>' );
 		endif;
@@ -51,5 +63,5 @@
 		endif;
 		edit_post_link( __( 'Edit', 'mudra' ), ' &vert; <span>', '</span>' );
 	endif;
-?>
+	?>
 </div><!-- .entry-meta -->

@@ -2,14 +2,14 @@
 /**
  * Template part for displaying page content in page.php
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package mudra
+ * @package Mudra
  */
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/CreativeWork">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="https://schema.org/CreativeWork">
 
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' ); ?>
@@ -18,19 +18,19 @@
 
 	<div class="entry-content" itemprop="text">
 		<?php
-			if ( has_post_thumbnail() ) :
-				the_post_thumbnail(
-					'medium_large',
-					['class'=>'featured-image']
-				);
-			endif;
+		if ( has_post_thumbnail() ) :
+			the_post_thumbnail(
+				'medium_large',
+				['class'=>'featured-image']
+			);
+		endif;
 
-			the_content();
+		the_content();
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'mudra' ),
-				'after'  => '</div>',
-			) );
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'mudra' ),
+			'after'  => '</div>',
+		) );
 		?>
 	</div><!-- .entry-content -->
 

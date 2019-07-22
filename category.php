@@ -2,54 +2,57 @@
 /**
  * The template for displaying category archives
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package mudra
+ * @package Mudra
  */
 
-get_header(); ?>
+get_header();
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php
 
-			if ( true == get_theme_mod( 'mudra_breadcrumbs', true ) ) :
-				mudra_breadcrumbs();
+		if ( true == get_theme_mod( 'mudra_breadcrumbs', true ) ) :
+			mudra_breadcrumbs();
+		endif;
+
+		if ( have_posts() ) :
+
+			echo '<header class="page-header"><h1 class="page-title">';
+			echo single_cat_title( __( 'All posts in ', 'mudra' ) ) . '</h1>';
+			if ( ! is_paged() ) :
+				the_archive_description( '<div class="taxonomy-description">', '</div>' );
 			endif;
+			echo '</header><!-- .page-header -->';
 
-			if ( have_posts() ) :
+			// Start the Loop
+			while ( have_posts() ) :
+				the_post();
 
-				echo '<header class="page-header"><h1 class="page-title">';
-				echo single_cat_title( __( 'All posts in ', 'mudra' ) ) . '</h1>';
-				if ( ! is_paged() ) :
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				endif;
-				echo '</header><!-- .page-header -->';
+				// Include the template for the category archive content.
+				get_template_part( 'template-parts/post/content', 'loop' );
 
-				// Start the Loop
-				while ( have_posts() ) : the_post();
+			endwhile;
 
-					// Include the template for the category archives content.
-					get_template_part( 'template-parts/post/content', 'loop' );
+			the_posts_pagination( array(
+				'prev_text' => '&laquo; <span class="screen-reader-text">' . __( 'Previous', 'mudra' ) . '</span>',
+				'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'mudra' ) . '</span> &raquo;',
+			) );
 
-				endwhile;
+		else :
 
-				the_posts_pagination( array(
-					'prev_text' => '&laquo; <span class="screen-reader-text">' . __( 'Previous', 'mudra' ) . '</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'mudra' ) . '</span> &raquo;',
-				) );
+			get_template_part( 'template-parts/post/content', 'none' );
 
-			else :
-
-				get_template_part( 'template-parts/post/content', 'none' );
-
-			endif;
+		endif;
 
 		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer();

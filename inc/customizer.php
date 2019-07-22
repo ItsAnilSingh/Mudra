@@ -2,7 +2,7 @@
 /**
  * Mudra Theme Customizer
  *
- * @package mudra
+ * @package Mudra
  */
 
 /**
@@ -11,20 +11,20 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function mudra_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-	$wp_customize->selective_refresh->add_partial( 'blogname', array(
-		'selector' => '.site-title a',
-		'render_callback' => 'mudra_customize_partial_blogname',
-	) );
-	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-		'selector' => '.site-description',
-		'render_callback' => 'mudra_customize_partial_blogdescription',
-	) );
-
-	$wp_customize->remove_section( 'background_image' );
+	if ( isset( $wp_customize->selective_refresh ) ) {
+		$wp_customize->selective_refresh->add_partial( 'blogname', array(
+			'selector' => '.site-title a',
+			'render_callback' => 'mudra_customize_partial_blogname',
+		) );
+		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+			'selector' => '.site-description',
+			'render_callback' => 'mudra_customize_partial_blogdescription',
+		) );
+	}
 
 	// Text color
 	$wp_customize->add_setting( 'text_color', array(
@@ -40,7 +40,7 @@ function mudra_customize_register( $wp_customize ) {
 
 	// Link color
 	$wp_customize->add_setting( 'link_color', array(
-		'default'           => '#ce181e',
+		'default'           => '#0057e7',
 		'transport'         => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
@@ -52,7 +52,7 @@ function mudra_customize_register( $wp_customize ) {
 
 	// Link color on hover
 	$wp_customize->add_setting( 'hover_color', array(
-		'default'           => '#dd3333',
+		'default'           => '#1e73be',
 		'transport'         => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
@@ -64,7 +64,7 @@ function mudra_customize_register( $wp_customize ) {
 
 	// Button color
 	$wp_customize->add_setting( 'button_color', array(
-		'default'           => '#ce181e',
+		'default'           => '#0057e7',
 		'transport'         => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
@@ -76,7 +76,7 @@ function mudra_customize_register( $wp_customize ) {
 
 	// Button color on hover
 	$wp_customize->add_setting( 'button_hover_color', array(
-		'default'           => '#333',
+		'default'           => '#d62d20',
 		'transport'         => 'refresh',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
@@ -363,6 +363,17 @@ function mudra_customize_register( $wp_customize ) {
 		'label'             => __( 'Display Entry Footer', 'mudra' ),
 	) );
 
+	// Post navigation
+	$wp_customize->add_setting( 'post_navigation', array(
+		'default'           => true,
+		'sanitize_callback' => 'mudra_sanitize_checkbox',
+	) );
+	$wp_customize->add_control( 'post_navigation', array(
+		'type'              => 'checkbox',
+		'section'           => 'single_settings',
+		'label'             => __( 'Display Post Navigation', 'mudra' ),
+	) );
+
 	// Author box
 	$wp_customize->add_setting( 'author_box', array(
 		'default'           => true,
@@ -503,9 +514,9 @@ function mudra_get_social_sites() {
 }
 
 /**
- * Bind JS handlers to instantly live-preview changes.
+ * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function mudra_customize_preview_js() {
-	wp_enqueue_script( 'mudra-customize-preview', get_theme_file_uri( '/assets/js/customize-preview.js' ), array( 'customize-preview' ), '', true );
+	wp_enqueue_script( 'mudra-customize-preview', get_template_directory_uri() . '/assets/js/customize-preview.js', array( 'customize-preview' ), '', true );
 }
 add_action( 'customize_preview_init', 'mudra_customize_preview_js' );

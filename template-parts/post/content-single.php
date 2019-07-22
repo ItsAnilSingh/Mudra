@@ -2,81 +2,83 @@
 /**
  * Template part for displaying posts
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package mudra
+ * @package Mudra
  */
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/CreativeWork">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="https://schema.org/CreativeWork">
 
 	<header class="entry-header">
 		<?php
-			if ( is_single() ) :
-				the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' );
-			elseif ( is_front_page() && is_home() ) :
-				the_title( '<h3 class="entry-title" itemprop="headline"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
-			else :
-				the_title( '<h2 class="entry-title" itemprop="headline"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			endif;
+		if ( is_single() ) :
+			the_title( '<h1 class="entry-title" itemprop="headline">', '</h1>' );
+		elseif ( is_front_page() && is_home() ) :
+			the_title( '<h3 class="entry-title" itemprop="headline"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+		else :
+			the_title( '<h2 class="entry-title" itemprop="headline"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		endif;
 
-			if ( 'post' === get_post_type() ) :
-				get_template_part( 'template-parts/post/entry', 'meta' );
-			endif;
+		if ( 'post' === get_post_type() ) :
+			get_template_part( 'template-parts/post/entry', 'meta' );
+		endif;
 		?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content" itemprop="text">
 		<?php
-			if ( has_post_thumbnail() && ( get_theme_mod( 'single_featured_image', true ) == true ) ) :
-				the_post_thumbnail(
-					'mudra-featured-image',
-					['class'=>'featured-image']
-				);
-			endif;
+		if ( has_post_thumbnail() && ( get_theme_mod( 'single_featured_image', true ) == true ) ) :
+			the_post_thumbnail(
+				'mudra-featured-image',
+				['class'=>'featured-image']
+			);
+		endif;
 		?>
 		<?php
-			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				'%1$s <span class="screen-reader-text">"%2$s"</span>',
-				esc_html__( 'Continue reading', 'mudra' ),
-				get_the_title()
-			) );
+		/* translators: %s: Name of current post */
+		the_content( sprintf(
+			'%1$s <span class="screen-reader-text">"%2$s"</span>',
+			esc_html__( 'Continue reading', 'mudra' ),
+			get_the_title()
+		) );
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'mudra' ),
-				'after'  => '</div>',
-			) );
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . __( 'Pages:', 'mudra' ),
+			'after'  => '</div>',
+		) );
 		?>
 	</div><!-- .entry-content -->
 
 	<?php
-		if ( true == get_theme_mod( 'single_entry_footer', true ) ) :
-			mudra_entry_footer();
-		endif;
+	if ( true == get_theme_mod( 'single_entry_footer', true ) ) :
+		mudra_entry_footer();
+	endif;
 	?>
 
 </article><!-- #post-## -->
 
 <?php
+if ( true == get_theme_mod( 'post_navigation', true ) ) :
 	the_post_navigation( array(
 		'prev_text' => '&laquo; %title',
 		'next_text' => '%title &raquo;',
 	) );
+endif;
 ?>
 
 <?php if ( true == get_theme_mod( 'author_box', true ) ) : ?>
-<div class="author-box" itemprop="author" itemscope itemtype="http://schema.org/Person">
-	<h4 class="about-author"><?php esc_html_e( 'About The Author', 'mudra' ); ?></h4>
-	<span>
+<div class="author-box" itemprop="author" itemscope itemtype="https://schema.org/Person">
+	<div class="alignright">
 		<?php
-			if ( function_exists( 'get_avatar' ) ) :
-				echo get_avatar( get_the_author_meta( 'email' ), '100' );
-			endif;
+		if ( function_exists( 'get_avatar' ) ) :
+			echo get_avatar( get_the_author_meta( 'email' ), '100' );
+		endif;
 		?>
-	</span>
+	</div>
 	<div class="author-meta">
+		<h4 class="about-author"><?php esc_html_e( 'About The Author', 'mudra' ); ?></h4>
 		<h5 class="author-name" itemprop="name">
 			<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author" itemprop="url"><?php the_author_meta( 'display_name' ); ?></a>
 		</h5>
@@ -109,11 +111,11 @@
 <?php endif; ?>
 
 <?php
-	if ( 'disable' !== get_theme_mod( 'related_posts' ) ) :
-		if ( 'tags' === get_theme_mod( 'related_posts' ) ) :
-			mudra_related_posts( array( 'taxonomy' => 'post_tag' ) );
-		else :
-			mudra_related_posts();
-		endif;
+if ( 'disable' !== get_theme_mod( 'related_posts' ) ) :
+	if ( 'tags' === get_theme_mod( 'related_posts' ) ) :
+		mudra_related_posts( array( 'taxonomy' => 'post_tag' ) );
+	else :
+		mudra_related_posts();
 	endif;
+endif;
 ?>

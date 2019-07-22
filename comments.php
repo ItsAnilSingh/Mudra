@@ -5,9 +5,9 @@
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package mudra
+ * @package Mudra
  */
 
 /*
@@ -24,53 +24,59 @@ if ( post_password_required() ) {
 
 	<?php
 	// You can start editing here -- including this comment!
-	if ( have_comments() ) : ?>
+	if ( have_comments() ) :
+		?>
 		<h2 class="comments-title">
 			<?php
-			$comments_number = get_comments_number();
-			if ( '1' === $comments_number ) {
+			$mudra_comments_number = get_comments_number();
+			if ( '1' === $mudra_comments_number ) {
 				/* translators: %s: post title */
-				printf( esc_html_x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'mudra' ), esc_html( get_the_title() ) );
+				printf(
+					esc_html_x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'mudra' ),
+					'<span>' . esc_html( get_the_title() ) . '</span>'
+				);
 			} else {
 				printf(
 					/* translators: 1: number of comments, 2: post title */
 					esc_html( _nx(
 						'%1$s Reply to &ldquo;%2$s&rdquo;',
 						'%1$s Replies to &ldquo;%2$s&rdquo;',
-						$comments_number,
+						$mudra_comments_number,
 						'comments title',
 						'mudra'
 					) ),
-					number_format_i18n( $comments_number ),
-					esc_html( get_the_title() )
+					number_format_i18n( $mudra_comments_number ),
+					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
 			}
 			?>
-		</h2>
+		</h2><!-- .comments-title -->
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-					'reply_text' => __( 'Reply', 'mudra' ),
-				) );
+			wp_list_comments( array(
+				'max_depth'  => 5,
+				'style'      => 'ol',
+				'short_ping' => true,
+				'reply_text' => __( 'Reply', 'mudra' ),
+			) );
 			?>
 		</ol><!-- .comment-list -->
 
 		<?php
-			the_comments_pagination( array(
-				'prev_text' => '<span class="screen-reader-text">' . __( 'Previous', 'mudra' ) . '</span>',
-				'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'mudra' ) . '</span>',
-			) );
+		the_comments_pagination( array(
+			'prev_text' => '<span class="screen-reader-text">' . __( 'Previous', 'mudra' ) . '</span>',
+			'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'mudra' ) . '</span>',
+		) );
 
 	endif; // Check for have_comments().
 
 	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+		?>
 
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'mudra' ); ?></p>
-	<?php
+		<?php
 	endif;
 
 	comment_form();

@@ -2,9 +2,9 @@
 /**
  * Custom header implementation
  *
- * @link https://codex.wordpress.org/Custom_Headers
+ * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package mudra
+ * @package Mudra
  */
 
 /**
@@ -21,7 +21,7 @@ function mudra_custom_header_setup() {
 	 * @type string $default-text-color     Default color of the header text.
 	 * @type int    $width                  Width in pixels of the custom header image. Default 1100.
 	 * @type int    $height                 Height in pixels of the custom header image. Default 120.
-	 * @type string $wp-head-callback       Callback function used to styles the header image and text
+	 * @type string $wp-head-callback       Callback function used to style the header image and text
 	 *                                      displayed on the blog.
 	 */
 	add_theme_support( 'custom-header', apply_filters( 'mudra_custom_header_args', array(
@@ -53,18 +53,18 @@ function mudra_header_style() {
 	?>
 	<style id="mudra-custom-header-styles" type="text/css">
 	<?php
-		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-	?>
+	// Has the text been hidden?
+	if ( ! display_header_text() ) :
+		?>
 		.site-title,
 		.site-description {
 			position: absolute;
 			clip: rect(1px, 1px, 1px, 1px);
 		}
-	<?php
-		// If the user has set a custom color for the text use that.
-		else :
-	?>
+		<?php
+	// If the user has set a custom color for the text use that.
+	else :
+		?>
 		.site-title a,
 		.site-description,
 		.mobile-toggle {
@@ -73,7 +73,9 @@ function mudra_header_style() {
 		.slicknav_btn {
 			background-color: #<?php echo esc_attr( $header_text_color ); ?>;
 		}
-	<?php endif; ?>
+		<?php
+	endif;
+	?>
 	</style>
 	<?php
 }

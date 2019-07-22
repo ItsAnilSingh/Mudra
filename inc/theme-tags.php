@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package mudra
+ * @package Mudra
  */
 
 /**
@@ -108,7 +108,7 @@ function mudra_breadcrumbs() {
 		return;
 	else :
 		printf(
-			'<div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><span class="breadcrumbs-nav"><span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="%1$s" title="%2$s" itemprop="item"><span itemprop="name">%2$s</span></a><meta itemprop="position" content="1"></span>%3$s',
+			'<div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span class="breadcrumbs-nav"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="%1$s" title="%2$s" itemprop="item"><span itemprop="name">%2$s</span></a><meta itemprop="position" content="1"></span>%3$s',
 			esc_url( home_url() ),
 			esc_html__( 'Home', 'mudra' ),
 			esc_attr( $sep )
@@ -145,7 +145,7 @@ function mudra_breadcrumbs() {
 			$categories = get_the_category();
 			if ( ! empty( $categories ) ) :
 				printf(
-					'<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="%1$s" title="%2$s" itemprop="item"><span itemprop="name">%2$s</span></a><meta itemprop="position" content="2"></span>%3$s',
+					'<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="%1$s" title="%2$s" itemprop="item"><span itemprop="name">%2$s</span></a><meta itemprop="position" content="2"></span>%3$s',
 					esc_url( get_category_link( $categories[0]->term_id ) ),
 					esc_html( $categories[0]->name ),
 					esc_attr( $sep )

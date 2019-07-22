@@ -4,11 +4,11 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package mudra
+ * @package Mudra
  */
 
 // Set theme version
-define( 'MUDRA_VERSION', '1.0.6' );
+define( 'MUDRA_VERSION', '1.0.7' );
 define( 'REQUIRED_PHP_VERSION', '5.4.0' );
 
 /**
@@ -98,6 +98,12 @@ function mudra_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Set up the WordPress core custom background feature.
+	add_theme_support( 'custom-background', apply_filters( 'mudra_custom_background_args', array(
+		'default-color' => '#f6f7f8',
+		'default-image' => '',
+	) ) );
 
 }
 add_action( 'after_setup_theme', 'mudra_setup' );
