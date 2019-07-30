@@ -4,7 +4,7 @@ Theme URI: https://tricksmash.com/mudra/
 Author: ItsAnilSingh
 Author URI: https://github.com/ItsAnilSingh
 Description: Mudra is a free responsive, fast loading and SEO friendly WordPress theme for blogs. This theme is ideal for personal, technology, lifestyle, cooking, travel, fashion, photography and any other kind of amazing blog. Rich snippets are also integrated into this theme to help search engines identify all parts of your site and rank its content higher. Mudra incorporates several premium-level customization options. This theme is translation ready, well documented, and easy to configure.
-Version: 1.0.7
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mudra
@@ -853,7 +853,7 @@ p > object:only-child {
 }
 
 .mobile-toggle .fa-search::before {
-	top: 23px;
+	top: 25px;
 	margin-right: 55px;
 	z-index: 999;
 }
@@ -955,11 +955,11 @@ p > object:only-child {
 }
 
 .site-branding .custom-logo-link + .site-branding-text > .site-title {
-	margin-top: 15px;
+	margin-top: 10px;
 }
 
 .site-branding .custom-logo-link + .site-branding-text > .site-description {
-	margin-bottom: 30px;
+	margin: 5px 0 25px 0;
 }
 
 .site-branding-text {
@@ -2184,12 +2184,9 @@ p > object:only-child {
 	padding: 0;
 }
 
-.comment-respond {
+.comment-list .comment-respond {
 	background: #f6f7f8;
 	padding: 20px;
-}
-
-.comment-list .comment-respond {
 	margin-bottom: 20px;
 }
 
@@ -2198,7 +2195,7 @@ p > object:only-child {
 .comment-form-url {
 	width: 32%;
 	display: inline-block;
-	margin-right: 1.2%;
+	margin-right: 1.4%;
 }
 
 .comment-form-url {
@@ -2542,6 +2539,10 @@ p > object:only-child {
 		display: block;
 		margin-left: 64px;
 	}
+	.comment-form-author,
+	.comment-form-email {
+		margin-right: 1.2%;
+	}
 	/* Sidebar */
 	.sidebar {
 		width: 300px;
@@ -2741,7 +2742,7 @@ p > object:only-child {
 	}
 	/* Footer */
 	.footer-widgets {
-		padding: 20px;
+		padding: 20px 0;
 	}
 	.footer-widget-1,
 	.footer-widget-2,
@@ -2760,7 +2761,6 @@ p > object:only-child {
 @media only screen and (max-width: 479px) {
 	/* Site Branding */
 	.site-branding {
-		padding-left: 10px;
 		width: 70%;
 	}
 	.site-branding .custom-logo-link + .site-branding-text {
@@ -2772,34 +2772,17 @@ p > object:only-child {
 	}
 	/* Mobile Search */
 	.mobile-toggle .fa-search::before {
-		margin-right: 40px;
+		margin-right: 50px;
 	}
 	#header-main .header-search {
-		width: 260px;
-		margin-right: 40px;
+		width: 250px;
+		margin-right: 50px;
 	}
 	#header-main .header-search .search-field {
-		width: 145px;
+		width: 135px;
 	}
 	#header-main .header-search .search-submit {
 		padding: 0 5px;
-	}
-	/* Mobile Menu */
-	.slicknav_menu,
-	#slick-mobile-menu {
-		right: 5px;
-	}
-	/* Breadcrumbs & Page Header */
-	.breadcrumbs,
-	.page-header {
-		padding: 10px 10px 0;
-	}
-	/* Article */
-	.hentry,
-	.error-404,
-	.not-found,
-	.no-results {
-		padding: 10px;
 	}
 	/* Entry Title */
 	.entry-title {
@@ -2807,8 +2790,7 @@ p > object:only-child {
 	}
 	/* Search */
 	.search-content .post-thumbnail {
-		width: 100px;
-		margin-right: 10px;
+		margin-right: 15px;
 	}
 	.search-content .post-thumbnail img {
 		max-height: 60px;
@@ -2819,13 +2801,8 @@ p > object:only-child {
 	/* Post Navigation */
 	.post-navigation {
 		font-size: 16px;
-		padding: 0 10px;
 	}
-	/* Author Box, Related Posts & Comments */
-	.author-box,
-	.related-posts {
-		padding: 10px;
-	}
+	/* Related Posts & Comments */
 	.related-post {
 		width: 100%;
 		margin-bottom: 20px;
@@ -2841,47 +2818,30 @@ p > object:only-child {
 		width: 100%;
 	}
 	/* Comments */
-	.comments-area,
-	.comment-respond,
 	.comment-list article,
 	.comment-list .pingback,
 	.comment-list .trackback {
 		padding: 10px;
+	}
+	.comment-list .reply {
+		padding-bottom: 5px;
 	}
 	.comment-form-author,
 	.comment-form-email,
 	.comment-form-url,
 	.comment-form-comment {
 		width: 100%;
-		margin-bottom: 15px;
+		margin-bottom: 20px;
 	}
 	.comment-form-cookies-consent {
-		margin-bottom: 15px;
+		margin-bottom: 20px;
 	}
 	/* Pagination */
 	.pagination .page-numbers {
-		padding: 10px 9px;
+		padding: 9px;
 	}
-	/* Sidebar, Footer */
-	.widget {
-		padding: 10px 10px 0;
-	}
+	/* Sidebar */
 	.widget > *:last-child {
-		margin-bottom: 10px;
-	}
-	.footer-widgets {
-		padding: 10px;
-	}
-	.footer-widget-1,
-	.footer-widget-2,
-	.footer-widget-3 {
-		margin: 0 0 10px;
-	}
-	.footer-widget-3 {
-		margin-bottom: 0;
-	}
-	.site-info,
-	#footer-menu {
-		padding: 0 10px;
+		margin-bottom: 20px;
 	}
 }

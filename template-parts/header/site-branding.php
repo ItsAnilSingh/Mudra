@@ -1,5 +1,9 @@
 <div class="site-branding">
-	<?php the_custom_logo(); ?>
+	<?php
+	if ( has_custom_logo() ) :
+		the_custom_logo();
+	endif;
+	?>
 	<div class="site-branding-text">
 	<?php
 	if ( is_front_page() && is_home() ) :

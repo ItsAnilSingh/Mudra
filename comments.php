@@ -30,8 +30,8 @@ if ( post_password_required() ) {
 			<?php
 			$mudra_comments_number = get_comments_number();
 			if ( '1' === $mudra_comments_number ) {
-				/* translators: %s: post title */
 				printf(
+					/* translators: %s: post title */
 					esc_html_x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'mudra' ),
 					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
