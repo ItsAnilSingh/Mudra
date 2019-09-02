@@ -4,7 +4,7 @@ Theme URI: https://tricksmash.com/mudra/
 Author: ItsAnilSingh
 Author URI: https://github.com/ItsAnilSingh
 Description: Mudra is a free responsive, fast loading and SEO friendly WordPress theme for blogs. This theme is ideal for personal, technology, lifestyle, cooking, travel, fashion, photography and any other kind of amazing blog. Rich snippets are also integrated into this theme to help search engines identify all parts of your site and rank its content higher. Mudra incorporates several premium-level customization options. This theme is translation ready, well documented, and easy to configure.
-Version: 1.1
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: mudra
@@ -1490,6 +1490,7 @@ p > object:only-child {
 
 .page .breadcrumbs,
 .single .breadcrumbs,
+.author .breadcrumbs,
 .error404 .breadcrumbs {
 	padding-bottom: 10px;
 	margin-bottom: 20px;
@@ -1873,8 +1874,29 @@ p > object:only-child {
 	text-transform: uppercase;
 }
 
+.author .author-meta .author-name {
+	margin-bottom: 5px;
+}
+
+.author .author-meta .author-post-count {
+	background: #0057e7;
+	color: #fff;
+	display: inline-block;
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: 1px;
+	padding: 4px;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+
 .author-meta .author-desc {
 	line-height: 1.8;
+}
+
+.author .author-meta .author-desc {
+	display: block;
 }
 
 .author-meta .post-author-links a {
@@ -1889,6 +1911,10 @@ p > object:only-child {
 	padding: 10px 0;
 	margin: 10px 7px 0 0;
 	float: left;
+}
+
+.author .author-meta .post-author-links a {
+	margin-top: 7px;
 }
 
 .author-meta .url {

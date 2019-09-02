@@ -8,7 +8,7 @@
  */
 
 // Set theme version
-define( 'MUDRA_VERSION', '1.1' );
+define( 'MUDRA_VERSION', '1.2' );
 define( 'REQUIRED_PHP_VERSION', '5.4.0' );
 
 /**

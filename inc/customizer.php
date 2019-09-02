@@ -26,6 +26,16 @@ function mudra_customize_register( $wp_customize ) {
 		) );
 	}
 
+	// Support section
+	require_once get_parent_theme_file_path( '/inc/classes/support.php' );
+	$wp_customize->register_section_type( 'Mudra_Customizer_Support_Section' );
+	$wp_customize->add_section( new Mudra_Customizer_Support_Section( $wp_customize, 'mudra_support', array(
+		'title'             => __( 'Need Support? Click Here!', 'mudra' ),
+		'url'               => esc_url( 'https://tricksmash.com/contact/#content' ),
+		'priority'          => 0,
+		'capability'        => 'edit_theme_options',
+	) ) );
+
 	// Text color
 	$wp_customize->add_setting( 'text_color', array(
 		'default'           => '#333',
@@ -91,7 +101,7 @@ function mudra_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_panel( 'mudra_theme_options', array(
 		'title'             => __( 'Mudra Theme Options', 'mudra' ),
-		'priority'          => 105, // Before widgets panel
+		'priority'          => 45, // Before Header Image
 		'capability'        => 'edit_theme_options',
 	) );
 

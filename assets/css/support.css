@@ -1,0 +1,46 @@
+#customize-theme-controls #accordion-section-mudra_support {
+	display: block !important;
+	border-top: 1px solid #0057e7;
+	border-bottom: 1px solid #0057e7;
+}
+
+#accordion-section-mudra_support h3 {
+	background-color: #0057e7;
+	border-left: 4px solid #0057e7;
+	padding: 0;
+	margin: 0;
+	-webkit-transition: all 0.15s ease-in-out;
+	-moz-transition: all 0.15s ease-in-out;
+	-o-transition: all 0.15s ease-in-out;
+	transition: all 0.15s ease-in-out;
+	outline: none;
+}
+
+#accordion-section-mudra_support h3:hover {
+	background-color: #3d5ac3;
+	border-left: 4px solid #fff;
+}
+
+#accordion-section-mudra_support h3 a {
+	display: block;
+	position: relative;
+	color: #fff;
+	padding: 10px 10px 11px 14px;
+	line-height: 21px;
+	text-decoration: none;
+	box-shadow: none !important;
+}
+
+#accordion-section-mudra_support h3 a:after {
+	content: '\f345';
+	font: 400 20px/1 dashicons;
+	position: absolute;
+	display: block;
+	color: #fff;
+	top: 12px;
+	right: 10px;
+	text-decoration: none !important;
+	z-index: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

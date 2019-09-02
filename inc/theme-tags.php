@@ -118,6 +118,15 @@ function mudra_breadcrumbs() {
 			if ( is_category() ) :
 				$cat_title = single_cat_title( '', false );
 				printf( '<span>%s</span>', esc_html( $cat_title ) );
+			elseif ( is_tag() ) :
+				$tag_title = single_tag_title( '', false );
+				printf( '<span>%s</span>', esc_html( $tag_title ) );
+			elseif ( is_author() ) :
+				printf(
+					'<span>%1$s %2$s</span>',
+					esc_html__( 'Archives for', 'mudra' ),
+					get_the_author_meta( 'display_name' )
+				);
 			elseif ( is_day() ) :
 				printf(
 					'<span>%1$s %2$s</span>',

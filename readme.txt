@@ -4,8 +4,8 @@ Donate link: https://www.paypal.me/ItsAnilSingh
 Requires at least: 4.5
 Tested up to: 5.2.2
 Requires PHP: 5.4.0
-Version: 1.1
-Stable tag: 1.1
+Version: 1.2
+Stable tag: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, entertainment, news, one-column, two-columns, right-sidebar, custom-colors, custom-header, custom-background, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
@@ -67,6 +67,11 @@ License: Creative Commons CC0
 Source: https://stocksnap.io/photo/QG7ACWH2TZ
 
 == Changelog ==
+
+= 1.2 - September 2 2019 =
+* Fixed breadcrumbs of author archives and tags
+* Added author archive template
+* Added support section in customizer
 
 = 1.1 - July 30 2019 =
 * Fixed site branding display in customizer (tablets and mobiles)
