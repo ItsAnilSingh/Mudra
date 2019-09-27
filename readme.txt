@@ -68,6 +68,8 @@ Source: https://stocksnap.io/photo/QG7ACWH2TZ
 
 == Changelog ==
 
+* Added 'related posts order by' support
+
 = 1.2 - September 2 2019 =
 * Fixed breadcrumbs of author archives and tags
 * Added author archive template

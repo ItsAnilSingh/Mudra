@@ -112,10 +112,16 @@ endif;
 
 <?php
 if ( 'disable' !== get_theme_mod( 'related_posts' ) ) :
+	$order_by = esc_html( get_theme_mod( 'related_posts_orderby' ) );
 	if ( 'tags' === get_theme_mod( 'related_posts' ) ) :
-		mudra_related_posts( array( 'taxonomy' => 'post_tag' ) );
+		mudra_related_posts( array(
+			'taxonomy' => 'post_tag',
+			'orderby'  => $order_by,
+		) );
 	else :
-		mudra_related_posts();
+		mudra_related_posts( array(
+			'orderby'  => $order_by
+		) );
 	endif;
 endif;
 ?>
