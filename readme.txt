@@ -2,10 +2,10 @@
 Contributors: ItsAnilSingh
 Donate link: https://www.paypal.me/ItsAnilSingh
 Requires at least: 4.5
-Tested up to: 5.2.2
+Tested up to: 5.3.2
 Requires PHP: 5.4.0
-Version: 1.2
-Stable tag: 1.2
+Version: 1.3
+Stable tag: 1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, entertainment, news, one-column, two-columns, right-sidebar, custom-colors, custom-header, custom-background, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
@@ -25,7 +25,7 @@ For more information, go to https://tricksmash.com/mudra/
 
 == Copyright ==
 
-Mudra WordPress Theme, Copyright 2019 TricksMash.com
+Mudra WordPress Theme, Copyright 2019 ItsAnilSingh, https://github.com/ItsAnilSingh
 Mudra is distributed under the terms of the GNU GPL
 
 Mudra bundles the following third-party resources:
@@ -68,7 +68,14 @@ Source: https://stocksnap.io/photo/QG7ACWH2TZ
 
 == Changelog ==
 
-* Added 'related posts order by' support
+= 1.3 - February 4 2020 =
+* Added Jetpack support
+* Updated WordPress version compatibility
+* Updated some misc information
+
+= 1.2.1 - December 10 2019 =
+* Updated footer author info and link
+* Updated WordPress version compatibility
 
 = 1.2 - September 2 2019 =
 * Fixed breadcrumbs of author archives and tags

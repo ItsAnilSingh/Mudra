@@ -411,22 +411,6 @@ function mudra_customize_register( $wp_customize ) {
 		),
 	) );
 
-	// Related posts order by
-	$wp_customize->add_setting( 'related_posts_orderby', array(
-		'default'           => 'date',
-		'sanitize_callback' => 'mudra_sanitize_select',
-	) );
-	$wp_customize->add_control( 'related_posts_orderby', array(
-		'type'              => 'select',
-		'section'           => 'single_settings',
-		'label'             => __( 'Related Posts Order By', 'mudra' ),
-		'choices'           => array(
-			'date'          => __( 'Date', 'mudra' ),
-			'rand'          => __( 'Random', 'mudra' ),
-			'comment_count' => __( 'Comment Count', 'mudra' ),
-		),
-	) );
-
 	// Footer settings
 	$wp_customize->add_section( 'footer_settings', array(
 		'title'             => __( 'Footer Settings', 'mudra' ),

@@ -8,7 +8,7 @@
  */
 
 // Set theme version
-define( 'MUDRA_VERSION', '1.2' );
+define( 'MUDRA_VERSION', '1.3' );
 define( 'REQUIRED_PHP_VERSION', '5.4.0' );
 
 /**
@@ -209,6 +209,11 @@ require get_parent_theme_file_path( '/inc/theme-tags.php' );
  * Customizer additions.
  */
 require get_parent_theme_file_path( '/inc/customizer.php' );
+
+/**
+ * Jetpack compatibility
+ */
+require get_parent_theme_file_path( '/inc/jetpack.php' );
 
 /**
  * Mudra customizer CSS generator

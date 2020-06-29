@@ -27,7 +27,7 @@
 
 	if ( true == get_theme_mod( 'support_theme', true ) ) :
 		printf(
-			' %1$s: <a href="%2$s" rel="nofollow" title="%3$s" target="_blank">%3$s</a> by %4$s.',
+			' %1$s: <a href="%2$s" rel="dofollow" title="%3$s" target="_blank">%3$s</a> by %4$s.',
 			esc_html__( 'Theme', 'mudra' ),
 			esc_url( 'https://tricksmash.com/mudra/' ),
 			esc_html__( 'Mudra', 'mudra' ),
